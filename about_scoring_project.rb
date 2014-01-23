@@ -54,7 +54,7 @@ def _(opts = {})
           roll_count[roll_index] - 3
         ]
       elsif opts[:singles]
-        [ 
+        [
           score + roll_count[roll_index] * singles_multiplier[roll_index],
           0
         ]
@@ -66,6 +66,7 @@ def _(opts = {})
     puts "#{e.class} : #{e.message}"
   end
 end
+
 def score(dice)
   s = 0
   unless dice.empty?
@@ -80,18 +81,18 @@ def score(dice)
       if roll_count[roll_index] > 2
         # Triples
         s, roll_count[roll_index] = _(
-          triples: true, 
-          dice_value: dice_value, 
-          roll_count: roll_count, 
-          roll_index: roll_index, 
+          triples: true,
+          dice_value: dice_value,
+          roll_count: roll_count,
+          roll_index: roll_index,
           score: s)
       else
         # Singles
         s, roll_count[roll_index] = _(
-          singles: true, 
-          dice_value: dice_value, 
-          roll_count: roll_count, 
-          roll_index: roll_index, 
+          singles: true,
+          dice_value: dice_value,
+          roll_count: roll_count,
+          roll_index: roll_index,
           score: s)
       end
 
